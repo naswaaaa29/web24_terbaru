@@ -1,150 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
 
 :root {
-    --primary-color: #11386e;
-    --secondary-color: rgb(158, 206, 239);
-    --accent-color: #febd24;
-    --background-color: #f9f9f9;
-    --text-color: #444;
-    --white: #fff;
-    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    --border-radius: 12px;
-    --transition-speed: 0.3s;
     --birdong: #2A1A5E;
     --orenterang: #F45905;
     --orenpastel: #FB9224;
     --kuning: #FBE555;
 }
 
-/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #EEEDED;
-    color: var(--text-color);
+    background: #eee;
+    margin-top: 100px;
 }
 
-section.courses {
-    background: #EEEDED;
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+.wrapper {
+    padding: 10px 10%;   
 }
 
-.courses .category {
-    margin-bottom: 4rem;
-    padding: 0 2rem;
-    margin-top: -3rem;
+#card-area {
+    padding: 50px 0;
 }
 
-.courses .category h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    text-align: center;
-    position: relative;
+.category {
+    margin-bottom: 50px;
 }
 
-.courses .category h2::after {
-    content: '';
-    width: 50px;
-    height: 5px;
-    background: var(--accent-color);
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.courses .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.courses .box {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.courses .box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-.courses .box .image {
-    position: relative;
-    overflow: hidden;
-    border-bottom: 3px solid var(--orenpastel);
-    flex-shrink: 0;
-}
-
-.courses .box .image img {
-    width: 100%;
-    height: auto;
-    transition: transform var(--transition-speed);
-}
-
-.courses .box:hover .image img {
-    transform: scale(1.1);
-}
-
-.courses .box .content {
-    padding: 2rem 1.5rem;
-}
-
-.courses .box .content h3 {
-    font-size: 1.75rem;
+.category h2 {
+    font-size: 24px;
     color: var(--birdong);
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.courses .box .content .icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
+.box-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
 }
 
-.courses .box .content .icons span {
-    font-size: 1rem;
-    color: var(--orenterang);
+.box-area1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
 }
 
-.courses .box .content .icons span i {
-    color: var(--orenterang);
-    padding-right: 0.5rem;
-}
 
-.courses .box .shine {
+.box {
+    border-radius: 10px;
     position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 300px;
 }
 
-.courses .box .shine::before {
-    content: '';
+.box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+    object-fit: cover;
+}
+
+.overlay {
+    height: 0;
+    width: 100%;
+    background: linear-gradient(transparent, #dbdbdb 58%);
+    border-radius: 10px;
     position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
-    transition: all var(--transition-speed) ease;
-    transform: rotate(45deg);
-}
-
-.courses .box:hover .shine::before {
-    top: 0;
+    bottom: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+    overflow: hidden;
 }
 
+.overlay h3, .overlay p, .overlay a {
+    opacity: 0;
+    color: var(--birdong);
+    transition: opacity 0.5s;
+}
+
+.box:hover img {
+    transform: scale(1.2);
+}
+
+.box:hover .overlay {
+    height: 100%;
+}
+
+.box:hover .overlay h3, .box:hover .overlay p, .box:hover .overlay a {
+    opacity: 1;
+}
+
+/* Button Styling */
+.overlay button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px; /* Add some spacing above the button */
+}
+
+.overlay button:hover {
+    background-color: #ff4500;
+    transform: scale(1.05);
+}
+
+/* Optional: Add some shadow to the button */
+.overlay button {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.overlay button:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 102, 0, 0.8);
+}
