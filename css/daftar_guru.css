@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #11386e;
+    --secondary-color: #57c4e4;
+    --accent-color: #00bfa5;
+    --background-color: #f9f9f9;
+    --text-color: #444;
+    --white-color: #ffffff;
+    --font-family: 'Roboto', sans-serif;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+section.courses {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.courses .heading {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.courses .heading::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    display: block;
+    margin: 0.5rem auto;
+    border-radius: var(--border-radius);
+}
+
+.courses .box-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    margin-top: 2rem;
+}
+
+.courses .col-5 {
+    background: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+    transition: var(--transition);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.courses .col-5:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.courses .col-5 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.courses .col-5 th, .courses .col-5 td {
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    text-align: left;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.courses .col-5 th {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.courses .col-5 td {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.courses .col-5 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.courses .col-5 tr:hover {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}

@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --birdong: #2A1A5E;
+    --orenterang: #F45905;
+    --orenpastel: #FB9224;
+    --kuning: #FBE555;
+}
+
+/* astronomi */
+.astronomi {
+    background: #EEEDED;
+    padding: 3rem 10%;
+}
+
+.astronomi h2{
+    color: var(--birdong);
+    font-size: 2.3rem;
+    margin-top: 50px;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.fasilitas h2 {
+    background: #F4F4F4;
+    font-size: 2.3rem;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.astronomi-card1 {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    color: var(--birdong);
+    justify-content: center;
+    gap: 1rem;
+}
+
+.astronomi-card2 {
+    display: flex;
+    color: var(--birdong);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.astronomi-card3 {
+    display: flex;
+    color: var(--birdong);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.astronomi-card4 {
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    gap: 1rem;
+    color: var(--birdong);
+    margin-left: 250px;
+    width: 495px;
+}
+
+.card {
+    padding: 1rem;
+    border: 2px solid var(--orenterang);
+    text-align: center;
+    border-radius: 25px;
+    display: block;
+    transition: all .4s ease;
+    z-index: 999;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: translateY(-7px);
+}
+
+.card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-top: -4rem;
+    filter: drop-shadow(0 0 0.5rem #F45905);
+}
+
+.card .price-name {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info {
+    padding-bottom: .5rem;
+}
+
+.info p {
+    padding: .5rem 0 1.5rem 0;
+}
+
+.info .btn {
+    display: block;
+    width: 60%;
+    margin: auto;
+}
+
+.btn {
+    background: var(--orenterang);
+    color: #F4F4F4;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    transition: all .3s ease;
+    border: 2px solid var(--kuning);
+    font-weight: 500;
+    margin-left: -40px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 1rem var(--orenterang);
+    background: var(--kuning);
+    color: var(--orenterang);
+}
+/* selesai */

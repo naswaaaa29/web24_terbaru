@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --primary-color: #11386e;
+    --secondary-color: rgb(158, 206, 239);
+    --accent-color: #febd24;
+    --background-color: #f9f9f9;
+    --text-color: #444;
+    --white: #fff;
+    --box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+    --birdong: #2A1A5E;
+    --orenterang: #F45905;
+    --orenpastel: #FB9224;
+    --kuning: #FBE555;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #EEEDED;
+    color: var(--text-color);
+}
+
+section.courses {
+    background: #EEEDED;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.courses .category {
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+    margin-top: -3rem;
+}
+
+.courses .category h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.courses .category h2::after {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: var(--accent-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.courses .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.courses .box {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.courses .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.courses .box .image {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--orenpastel);
+    flex-shrink: 0;
+}
+
+.courses .box .image img {
+    width: 100%;
+    height: auto;
+    transition: transform var(--transition-speed);
+}
+
+.courses .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.courses .box .content {
+    padding: 2rem 1.5rem;
+}
+
+.courses .box .content h3 {
+    font-size: 1.75rem;
+    color: var(--birdong);
+    margin-bottom: 1rem;
+}
+
+.courses .box .content .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.courses .box .content .icons span {
+    font-size: 1rem;
+    color: var(--orenterang);
+}
+
+.courses .box .content .icons span i {
+    color: var(--orenterang);
+    padding-right: 0.5rem;
+}
+
+.courses .box .shine {
+    position: relative;
+}
+
+.courses .box .shine::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+    transition: all var(--transition-speed) ease;
+    transform: rotate(45deg);
+}
+
+.courses .box:hover .shine::before {
+    top: 0;
+    left: 0;
+}
+

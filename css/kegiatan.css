@@ -1,0 +1,84 @@
+:root{
+    --fros-blue-color: #0050d5;
+    --light-blue-color: #0b4970;
+    --dark-color: #202020;
+    --light-gray: #dedede;
+    --light-color: #fff;
+    --poppins-font: 'Poppins', sans-serif;
+    --box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2)!important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.col {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title h1 {
+    color: #0b4970;
+    font-size: 35px;
+    text-align: center;
+    padding: 45px;
+   
+}
+
+.card-img-top{
+    border-radius: 10px;
+    padding: 0;
+    width: 300px;
+}
+
+.card{
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: rgba(151, 149, 149, 0.5) 0px 1px 2px 0px;
+    margin: auto;
+}
+
+.card-body{
+    padding: 10px;
+    margin-top: -15px;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.card-title{
+    font-size: 20px; 
+    text-align: center;
+}
+
+.btn-primary{
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    margin-left: 190px;
+    font-size: 15px; 
+    color: #0b4970; 
+    font-weight: bold;
+}
+
+.btn-primary:hover{
+    background-color: grey;
+    
+}
+
+h3, h5{
+    color: #0b4970;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
