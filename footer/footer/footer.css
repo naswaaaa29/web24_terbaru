@@ -7,14 +7,14 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+/* body {
     display: grid;
     justify-content: center;
     align-items: end;
     min-height: 100vh;
     background: #e8e8e8;
     padding: 50px;
-}
+} */
 
 footer {
     position: relative;
@@ -26,9 +26,10 @@ footer {
 
 footer .container {
     width: 100%;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: 25px;
 }
 
 footer .container .sec h2 {
@@ -56,7 +57,7 @@ footer .container .sci li a {
     display: inline-block;
     width: 36px;
     height: 36px;
-    background: #FB9224;
+    background: #F45905;
     display: grid;
     align-content: center;
     justify-content: center;
@@ -66,21 +67,6 @@ footer .container .sci li a {
 footer .container .sci li a i {
     color: #fff;
     font-size: 20px;
-}
-
-footer .container .quicklinks {
-    position: relative;
-}
-
-footer .container .quicklinks ul li {
-    list-style: none;
-}
-
-footer .container .quicklinks ul li a {
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 10px;
-    display: inline-block;
 }
 
 footer .container .contact .info {
