@@ -1,0 +1,208 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: hsl(175, 55%, 40%);
+  --first-color-light: hsl(175, 30%, 48%);
+  --first-color-lighten: hsl(175, 40%, 62%);
+  --gradient-color: linear-gradient(180deg, hsl(178, 35%, 45%), hsl(178, 55%, 28%));
+  --title-color: hsl(175, 40%, 16%);
+  --text-color: hsl(175, 8%, 50%);
+  --white-color: #fff;
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --birdong: #2A1A5E;
+  --body-color: hsl(175, 100%, 99%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+}
+
+/*=============== MAIN BODY STYLES ===============*/
+/* .body-testimonial {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+} */
+
+/*=============== CONTAINER ===============*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  margin-inline: 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+/*=============== TITLE ===============*/
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--title-color);
+}
+
+/*=============== MAIN CARD ===============*/
+.main-card {
+  display: flex;
+  overflow: hidden; /* Hide overflow */
+  width: 800px; /* Adjust width to show exactly 3 cards */
+  margin: auto;
+  padding: 20px 0;
+}
+
+.testimonial-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.arrow-button {
+  background-color: var(--birdong);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+
+.testimonial-arrow-left {
+  left: -10px;
+  border-radius: 50%;
+}
+
+.testimonial-arrow-right {
+  right: -10px;
+  border-radius: 50%;
+}
+
+.arrow-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*=============== CARD ===============*/
+.card {
+  flex: 0 0 auto; /* Make sure cards don't shrink */
+  margin: 10px;
+  position: relative;
+  width: 250px;
+  height: 298px;
+  background: var(--PrimaryColor);
+  border-radius: 1rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+  box-shadow: 0 8px 32px hsla(178, 55%, 20%, 0.15);
+}
+
+.card__img {
+  width: 80px;
+}
+
+.card__border {
+  width: 100px;
+  height: 100px;
+  background-color: var(--birdong);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.card__perfil {
+  width: 80px;
+  height: 80px;
+  background-color: var(--first-color-lighten);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.card__name, .card__profession {
+  color: var(--white-color);
+}
+
+.card__name {
+  font-size: var(--h2-font-size);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.card__title {
+  padding: 20px;
+}
+
+.card__profession {
+  font-size: var(--smaller-font-size);
+  font-weight: 500;
+}
+
+/*=============== CARD INFO ===============*/
+.info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--white-color);
+  padding: 2.5rem 1.5rem 3.3rem;
+  border-radius: 1rem 1rem 1rem 11rem;
+  clip-path: circle(16px at 90% 10%);
+  transition: clip-path 0.4s ease-in-out;
+}
+
+.info__icon {
+  position: absolute;
+  top: 0.80rem;
+  right: 9px;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  display: inline-flex;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.info__data {
+  padding: 5px;
+  display: grid;
+  row-gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  transform: translateX(-4rem);
+  transition: transform 1s;
+  height: 182px; //ukuran panjang info-hover
+}
+
+.info__profession {
+  font-size: 12px;
+  text-align: justify;
+}
+
+/* Card info animation */
+.info:hover {
+  clip-path: circle(75%);
+}
+
+.info:hover .info__icon {
+  opacity: 0;
+}
+
+.info:hover .info__data {
+  transform: translateX(0);
+}
