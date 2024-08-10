@@ -26,50 +26,16 @@
     margin-bottom: 3rem;
 }
 
-.fasilitas h2 {
-    background: #F4F4F4;
-    font-size: 2.3rem;
-    padding: 2rem 0 1rem 0;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.astronomi-card1 {
+.astronomi-card1, .astronomi-card2, .astronomi-card3, .astronomi-card4 {
     display: flex;
-    margin-top: 50px;
     align-items: center;
     color: var(--birdong);
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap; /* Untuk memastikan card tetap rapi jika ruang tidak cukup */
 }
 
-.astronomi-card2 {
-    display: flex;
-    color: var(--birdong);
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.astronomi-card3 {
-    display: flex;
-    color: var(--birdong);
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.astronomi-card4 {
-    display: flex;
-    /* align-items: center;
-    justify-content: center; */
-    gap: 1rem;
-    color: var(--birdong);
-    margin-left: 250px;
-    width: 495px;
-}
-
-.card{
+.card {
     padding: 1rem;
     border: 2px solid var(--orenterang);
     text-align: center;
@@ -77,6 +43,9 @@
     display: block;
     transition: all .4s ease;
     z-index: 999;
+    flex: 1 1 calc(25% - 1rem); /* Mengatur lebar card agar sesuai dengan ukuran layar */
+    box-sizing: border-box;
+    max-width: 250px;
 }
 
 .card:hover {
@@ -107,8 +76,11 @@
 
 .info .btn {
     display: block;
-    width: 60%;
-    margin: auto;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: .5rem 0.8rem;
+    font-size: 1rem;
 }
 
 .btn {
@@ -116,11 +88,9 @@
     color: #F4F4F4;
     text-decoration: none;
     border-radius: 25px;
-    padding: .5rem 1rem;
-    transition: all .3s ease;
     border: 2px solid var(--kuning);
     font-weight: 500;
-    margin-left: -40px;
+    transition: all .3s ease;
 }
 
 .btn:hover {
@@ -128,4 +98,52 @@
     background: var(--kuning);
     color: var(--orenterang);
 }
-/* selesai */
+
+/* Responsive untuk mobile */
+@media only screen and (max-width: 768px) {
+    .astronomi {
+        padding: 2rem 5%;
+    }
+
+    .astronomi h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 1rem); /* Ukuran card di mobile akan 50% lebar layar */
+        max-width: 100%;
+    }
+
+    .astronomi-card4 {
+        margin-left: 0; /* Reset margin untuk mobile */
+        justify-content: center;
+    }
+
+    .btn {
+        width: 90%; /* Lebih lebar agar teks tetap di satu baris */
+        padding: .5rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* Ukuran card akan 100% lebar layar di layar yang lebih kecil */
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .card img {
+        width: 90px;
+        height: 90px;
+    }
+}

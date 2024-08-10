@@ -7,19 +7,11 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* body {
-    display: grid;
-    justify-content: center;
-    align-items: end;
-    min-height: 100vh;
-    background: #e8e8e8;
-    padding: 50px;
-} */
-
 footer {
     position: relative;
     width: 100%;
     height: auto;
+   margin-top: 250px;
     padding: 50px 100px;
     background: #2A1A5E;
 }
