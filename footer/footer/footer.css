@@ -25,8 +25,12 @@ footer {
     bottom: 0;
 }
 
+<<<<<<< HEAD
 footer .container {
     font-size: 14px;
+=======
+footer .kontainer {
+>>>>>>> d35c65a64655ea836d719b520b4103ddcd0c131e
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -34,28 +38,28 @@ footer .container {
     grid-gap: 25px;
 }
 
-footer .container .sec h2 {
+footer .kontainer .sec h2 {
     position: relative;
     color: #fff;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-footer .container .sec p {
+footer .kontainer .sec p {
     color: #fff;
 }
 
-footer .container .sci {
+footer .kontainer .sci {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4, 50px);
 }
 
-footer .container .sci li {
+footer .kontainer .sci li {
     list-style: none;
 }
 
-footer .container .sci li a {
+footer .kontainer .sci li a {
     display: inline-block;
     width: 36px;
     height: 36px;
@@ -66,27 +70,27 @@ footer .container .sci li a {
     text-decoration: none;
 }
 
-footer .container .sci li a i {
+footer .kontainer .sci li a i {
     color: #fff;
     font-size: 20px;
 }
 
-footer .container .contact .info {
+footer .kontainer .contact .ket {
     position: relative;
 }
 
-footer .container .contact .info li {
+footer .kontainer .contact .ket li {
     display: grid;
     grid-template-columns: 30px 1fr;
     margin-bottom: 16px;
 }
 
-footer .container .contact .info li span {
+footer .kontainer .contact .ket li span {
     color: #fff;
     font-size: 20px;
 }
 
-footer .container .contact .info li a {
+footer .kontainer .contact .ket li a {
     color: #fff;
     text-decoration: none;
 }
@@ -105,7 +109,7 @@ footer .container .contact .info li a {
         padding: 40px;
     }
 
-    footer .container {
+    footer .kontainer {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);;
@@ -118,7 +122,7 @@ footer .container .contact .info li a {
 }
 
 @media (max-width: 768px) {
-    footer .container {
+    footer .kontainer {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(1, 1fr);;
