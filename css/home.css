@@ -10,7 +10,7 @@
     --greyBg: hsl(0, 0%, 96%);
     --greyText: rgb(190, 190, 190);
     --inputColor: hsl(330, 12%, 97%);
-    --birdong: #2A1A5E;
+    --birdong: #0b4970;
     --orenterang: #F45905;
     --orenpastel: #FB9224;
     --kuning: #FBE555;
@@ -23,6 +23,7 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* header */
 header {
     z-index: 999;
     position: absolute;
@@ -37,7 +38,7 @@ header {
 }
 
 header .plant {
-    color: #F45905;
+    color: #FB9224;
     font-size: 1.5em;
     font-weight: 700;
     text-transform: uppercase;
@@ -50,7 +51,7 @@ header .navigation {
 
 header .navigation .navigation-items a {
     position: relative;
-    color: #F45905;
+    color: #2A1A5E;
     font-size: 1em;
     font-weight: 500;
     text-decoration: none;
@@ -87,7 +88,7 @@ header .navigation .navigation-items a:hover:before {
 .dropdown-content {
     display: none;
     position: absolute;
-    filter: blur(50%);
+    backdrop-filter: blur(20px);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -113,6 +114,7 @@ header .navigation .navigation-items a:hover:before {
 section {
     padding: 100px 200px;
 }
+
 
 .home {
     position: relative;
@@ -359,6 +361,11 @@ section {
     position: relative;
 }
 
+.prestasi-page-container {
+    top: 100px;
+    position: relative;
+}
+
 .prestasi-secHeader {
     margin: 10px;
     display: flex;
@@ -386,6 +393,7 @@ section {
 .prestasi-container {
     padding: 20px;
     position: relative;
+    box-sizing: border-box; 
 }
 
 .prestasi-secHeader {
@@ -410,56 +418,50 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 
 .prestasi {
     display: flex;
     overflow-x: hidden;
-    width: 80%;
+    width: 92%; 
     scroll-behavior: smooth;
+    padding: 20px 0; 
+    box-sizing: border-box; 
 }
 
 .prestasi-card {
     background-color: var(--whiteColor);
     border: 2px solid var(--greyBg);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--PrimaryColor);
     text-align: center;
-    min-width: 315px;
-    max-width: 315px;
-    height: 420px;
+    min-width: 280px;
+    max-width: 280px;
+    height: 320px;
     padding: 20px;
-    margin: 0 18px;
+    margin: 0 10px;
     transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
 }
 
 .prestasi-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px var(--PrimaryColor);
 }
 
 .prestasi-image {
-    /* border: 20px solid var(--PrimaryColor); */
     overflow: hidden;
-    width: 270px;
+    width: 250px;
     height: 150px;
-    margin: 0 auto 10px;
+    margin: 0 -7px 10px;
 }
 
 .prestasi-image img {
+    border-radius: 2px;
     width: 100%;
     object-fit: cover;
 }
-
-/* .prestasi-card h3 {
-    margin: 10px 0 5px;
-    color: var(--blackColor);
-}
-
-.prestasi-card h4 {
-    margin: 5px 0 10px;
-    color: var(--PrimaryColor);
-} */
 
 .prestasi-description {
     text-align: justify;
@@ -472,11 +474,15 @@ section {
 }
 
 .button-prestasi {
-    border: 0;
-    border-radius: 5px;
-    background-color: var(--PrimaryColor);
+    background: var(--orenterang);
+    color: #F4F4F4;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid var(--kuning);
     margin: 10px;
-    height: 30px;
+    height: 35px;
+    font-weight: 500;
+    transition: all .3s ease;
 }
 
 .button-prestasi a {
@@ -486,11 +492,17 @@ section {
 }
 
 .button-prestasi a:hover {
-    color: blue;
+    color: var(--PrimaryColor);
+}
+
+.button-prestasi:hover {
+    box-shadow: 0 0 1rem var(--orenterang);
+    background: var(--kuning);
+    color: var(--orenterang);
 }
 
 .arrow-button {
-    background-color: var(--PrimaryColor);
+    background-color: var(--birdong);
     color: var(--whiteColor);
     border: none;
     border-radius: 50%;
@@ -505,6 +517,7 @@ section {
     transform: translateY(-50%);
     z-index: 1;
 }
+
 
 .arrow-left {
     left: 50px;

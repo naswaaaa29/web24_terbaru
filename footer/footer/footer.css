@@ -22,9 +22,11 @@ footer {
     height: auto;
     padding: 50px 100px;
     background: #2A1A5E;
+    bottom: 0;
 }
 
 footer .container {
+    font-size: 14px;
     width: 100%;
     display: flex;
     justify-content: space-between;

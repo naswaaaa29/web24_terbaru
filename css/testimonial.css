@@ -12,7 +12,10 @@
   --text-color: hsl(175, 8%, 50%);
   --white-color: #fff;
   --PrimaryColor: hsl(26, 93%, 50%);
-  --birdong: #2A1A5E;
+  --birdong: #0b4970;
+  --orenterang: #F45905;
+  --orenpastel: #FB9224;
+  --kuning: #FBE555;
   --body-color: hsl(175, 100%, 99%);
 
   /*========== Font and typography ==========*/
@@ -93,7 +96,7 @@
 }
 
 .arrow-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--orenpastel);
 }
 
 /*=============== CARD ===============*/
