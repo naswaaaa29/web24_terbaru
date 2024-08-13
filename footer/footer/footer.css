@@ -25,12 +25,11 @@ footer {
     bottom: 0;
 }
 
-<<<<<<< HEAD
 footer .container {
     font-size: 14px;
-=======
+}
+
 footer .kontainer {
->>>>>>> d35c65a64655ea836d719b520b4103ddcd0c131e
     width: 100%;
     display: flex;
     justify-content: space-between;

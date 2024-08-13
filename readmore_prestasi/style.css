@@ -246,5 +246,69 @@ body {
     line-height: 1.6;
     color: hsl(240, 1%, 48%);
 }
-
 /* selesai css read-more */
+
+/* Untuk tampilan mobile (lebar layar maksimum 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    header .plant {
+        font-size: 1.2em;
+    }
+
+    header .navigation .navigation-items a {
+        margin-left: 15px;
+        font-size: 0.9em;
+    }
+
+    .read-more {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .parallax-container {
+        margin: 20px 0;
+        padding: 15px;
+    }
+
+    .parallax-content {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        margin: 40px 0 0 0;
+        padding: 0 10px;
+    }
+
+    .prestasi-item {
+        padding: 15px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .prestasi-item h2 {
+        font-size: 1rem;
+    }
+
+    .prestasi-item p {
+        font-size: 0.85rem;
+    }
+
+    .floating-trophy, .floating-medal {
+        width: 40px;
+        height: 40px;
+    }
+
+    .floating-trophy {
+        top: 2%;
+    }
+
+    .floating-medal {
+        bottom: 2%;
+    }
+}

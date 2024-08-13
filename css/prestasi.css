@@ -591,104 +591,113 @@ footer .container .contact .info li a {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-@media (max-widht: 991px) {
-    footer {
-        padding: 40px;
-    }
-
-    footer .container {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);;
-        grid-gap: 20px;
-    }
-
-    .copyrightText {
-        padding: 20px 40px 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    footer .container {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);;
-        grid-gap: 20px;
-    }
-}
-
-/* Menyesuaikan header untuk layar lebih kecil */
+/* Responsive design for mobile */
 @media (max-width: 768px) {
     header {
-        padding: 10px 20px;
+        padding: 15px 20px;
+    }
+
+    header .navigation .navigation-items a {
+        margin-left: 15px;
+        font-size: 0.9em;
+    }
+
+    header .navigation .navigation-items a:hover:before {
+        height: 2px;
+    }
+
+    .prestasi-page-container {
+        padding: 20px;
+    }
+
+    .prestasi-secHeader h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .prestasi-wrapper {
         flex-direction: column;
         align-items: center;
     }
-    header .navigation .navigation-items {
+
+    .prestasi {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    header .navigation .navigation-items a {
-        margin: 10px 0;
-    }
-}
 
-/* Responsif untuk konten prestasi */
-@media (max-width: 1024px) {
-    .prestasi-wrapper {
-        flex-direction: column;
-        padding: 20px;
-    }
-    .prestasi-card {
-        margin: 15px 0;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-/* Lebih responsif untuk layar ponsel */
-@media (max-width: 576px) {
-    .prestasi-wrapper {
-        padding: 10px;
-    }
-    .prestasi-card {
-        max-width: 100%;
+    .prestasi .card1, .prestasi .card2, .prestasi .card3 {
         width: 100%;
-        margin: 10px 0;
-    }
-    .prestasi-secTitle {
-        font-size: 1.5rem;
-    }
-    .prestasi-description p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Footer responsif */
-@media (max-width: 768px) {
-    footer .container {
+        display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .prestasi-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .prestasi-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .prestasi-description p {
+        font-size: 1em;
+        text-align: justify;
+    }
+
+    .button-prestasi {
+        margin-top: 10px;
+    }
+
+    .button-prestasi a {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    footer .kontainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .sec.aboutus, footer .sec.contact {
         text-align: center;
     }
-    footer .sec {
-        margin-bottom: 20px;
+
+    footer .sec.contact ul.ket {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .sec.contact ul.ket li {
+        margin-bottom: 10px;
     }
 }
 
-/* Pengaturan umum */
-@media (max-width: 576px) {
-    body {
-        font-size: 14px;
+/* Responsive design for very small screens */
+@media (max-width: 480px) {
+    header .plant {
+        font-size: 1.2em;
     }
-    .prestasi-secTitle {
-        font-size: 1.3rem;
+
+    .prestasi-page-container {
+        padding: 10px;
     }
-    header {
-        padding: 5px 15px;
+
+    .prestasi-secHeader h2 {
+        font-size: 1.2em;
     }
-    section {
-        padding: 80px 15px;
+
+    .prestasi-card {
+        width: 100%;
+    }
+
+    .button-prestasi a {
+        padding: 8px 15px;
+        font-size: 0.8em;
     }
 }
