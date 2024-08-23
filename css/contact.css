@@ -1,5 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
+:root {
+    --PrimaryColor: hsl(26, 93%, 50%);
+    --HoverColor: hsl(26, 90%, 42%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+    --birdong: #0b4970;
+    --orenterang: #F45905;
+    --orenpastel: #FB9224;
+    --kuning: #FBE555;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -331,3 +347,225 @@ textarea.input{
         padding: 1.5rem 0 0 0;
     }
 }
+
+.menu-btn {
+    display: none;
+}
+
+/* Untuk tampilan mobile (lebar layar maksimum 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    header .plant {
+        font-size: 1.2em;
+    }
+
+    header .navigation {
+        display: none; /* Sembunyikan navigasi di mobile */
+    }    
+
+    .menu-btn {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    .sidebar.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background-color: var(--PrimaryColor);
+        padding: 20px;
+        transition: transform 0.3s ease;
+        transform: translateX(0);
+    }
+
+    .sidebar {
+        display: none;
+        transform: translateX(-100%);
+    }
+
+}
+
+/* Icon */
+.sidebar{
+    display: none; /* Pastikan sidebar tersembunyi secara default */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    padding: 20px;
+    z-index: 999;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar li{
+    margin: 14px 20px;
+  }
+
+  .sidebar li a {
+    text-decoration: none;
+    color: #2A1A5E;
+    font-size: 15px;
+    font-weight: bold;
+    }
+
+    .sidebar li a {
+        text-decoration: none;
+        color: #2A1A5E;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .sidebar li a:hover {
+        color: white;
+    }
+
+    .sidebar a{
+        width: 100%;
+    }
+
+  .menu-button{
+    display: block; /* Tampilkan menu button di mobile */
+    cursor: pointer;
+  }
+  @media(max-width: 800px){
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+  }
+  @media(max-width: 400px){
+    .sidebar{
+      width: 100%;
+    }
+  }
+
+/* selesai icon */
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 150px;
+    padding: 50px 100px;
+    background: #2A1A5E;
+    bottom: 0;
+}
+
+footer .container {
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+footer .container .sec h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+footer .container .sec p {
+    color: #fff;
+}
+
+footer .container .sci {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+}
+
+footer .container .sci li {
+    list-style: none;
+}
+
+footer .container .sci li a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: #F45905;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+footer .container .sci li a i {
+    color: #fff;
+    font-size: 20px;
+}
+
+footer .container .contact .info {
+    position: relative;
+}
+
+footer .container .contact .info li {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+
+footer .container .contact .info li span {
+    color: #fff;
+    font-size: 20px;
+}
+
+footer .container .contact .info li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copyrightText {
+    width: 100%;
+    background: #2A1A5E;
+    padding: 20px 100px 20px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    footer {
+        margin-top: 200px;
+    }
+
+    footer .kontainer {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    footer .sec.aboutus, footer .sec.contact {
+        text-align: left;
+    }
+
+    footer .sec.contact ul.ket {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+
+    footer .sec.contact ul.ket li {
+        margin-bottom: 10px;
+    }
+}
+  
