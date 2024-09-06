@@ -14,6 +14,10 @@
     --orenterang: #F45905;
     --orenpastel: #FB9224;
     --kuning: #FBE555;
+    --font-family: 'Poppins', sans-serif;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
 *{
@@ -309,21 +313,9 @@ section {
     position: relative;
 }
 
-.prestasi-secHeader {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.prestasi-secTitle {
-    font-size: 2rem;
-    color: var(--blackColor);
-}
-
 .prestasi-secHeader p {
     color: var(--textColor);
+    font-size: 14px;
 }
 
 .prestasi-wrapper {
@@ -349,7 +341,26 @@ section {
 
 .prestasi-secTitle {
     font-size: 2rem;
-    color: var(--blackColor);
+    margin-top: 50px;
+    color: var(--birdong);
+    /* margin-bottom: 2rem; */
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 2px; */
+    position: relative;
+    text-align: center;
+}
+
+.prestasi-secTitle::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--orenpastel);
+    display: block;
+    margin-top: 50px;
+    margin: 0.5rem auto;
+    border-radius: var(--border-radius);
+    text-align: center;
 }
 
 .prestasi-secHeader p {
@@ -472,6 +483,186 @@ section {
 
 .menu-btn {
     display: none;
+}
+
+.kejuaraan-ekskul-container {
+    padding: 20px;
+    position: relative;
+}
+
+.kejuaraan-ekskul-secHeader {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.kejuaraan-ekskul-secTitle {
+    font-size: 2rem;
+    margin-top: 50px;
+    color: var(--birdong);
+    /* margin-bottom: 2rem; */
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 2px; */
+    position: relative;
+    text-align: center;
+}
+
+.kejuaraan-ekskul-secTitle::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--orenpastel);
+    display: block;
+    margin-top: 50px;
+    margin: 0.5rem auto;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.kejuaraan-ekskul-secHeader p {
+    color: var(--textColor);
+    font-size: 14px;
+}
+
+.kejuaraan-ekskul-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.kejuaraan-ekskul {
+    display: flex;
+    overflow-x: hidden;
+    width: 92%; 
+    scroll-behavior: smooth;
+    padding: 20px 0; 
+    box-sizing: border-box; 
+}
+
+.kejuaraan-ekskul-card {
+    background-color: var(--whiteColor);
+    border: 2px solid var(--greyBg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--PrimaryColor);
+    text-align: center;
+    min-width: 280px;
+    max-width: 280px;
+    height: 320px;
+    padding: 20px;
+    margin: 0 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.kejuaraan-ekskul-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--PrimaryColor);
+}
+
+.kejuaraan-ekskul-image {
+    overflow: hidden;
+    width: 250px;
+    height: 150px;
+    margin: 0 -7px 10px;
+}
+
+.kejuaraan-ekskul-image img {
+    border-radius: 2px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.kejuaraan-ekskul-description {
+    text-align: justify;
+}
+
+.kejuaraan-ekskul-description p {
+    font-size: 15px;
+    margin: 5px 0;
+    color: var(--textColor);
+}
+
+.button-kejuaraan {
+    background: var(--orenterang);
+    color: #F4F4F4;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid var(--kuning);
+    margin: 10px;
+    height: 35px;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+.button-kejuaraan a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.button-kejuaraan a:hover {
+    color: var(--PrimaryColor);
+}
+
+.button-kejuaraan:hover {
+    box-shadow: 0 0 1rem var(--orenterang);
+    background: var(--kuning);
+    color: var(--orenterang);
+}
+
+.arrow-button {
+    background-color: var(--birdong);
+    color: var(--whiteColor);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+} 
+
+
+.arrow-left {
+    left: 50px;
+}
+
+.arrow-right {
+    right: 50px;
+}
+
+.title {
+    font-size: 2rem;
+    margin-top: 50px;
+    color: var(--birdong);
+    /* margin-bottom: 2rem; */
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 2px; */
+    position: relative;
+    text-align: center;
+}
+
+.title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--orenpastel);
+    display: block;
+    margin-top: 50px;
+    margin: 0.5rem auto;
+    border-radius: var(--border-radius);
+    text-align: center;
 }
 
 /* Untuk tampilan mobile (lebar layar maksimum 768px) */

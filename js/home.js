@@ -15,6 +15,25 @@ function scrollPrestasiRight() {
     });
 }
 
+// Scroll function for Kejuaraan Ekskul section
+function scrollKejuaraanEkskulLeft() {
+    const kejuaraanEkskul = document.getElementById('kejuaraanEkskul');
+    kejuaraanEkskul.scrollBy({
+        top: 0,
+        left: -300,
+        behavior: 'smooth'
+    });
+}
+
+function scrollKejuaraanEkskulRight() {
+    const kejuaraanEkskul = document.getElementById('kejuaraanEkskul');
+    kejuaraanEkskul.scrollBy({
+        top: 0,
+        left: 300,
+        behavior: 'smooth'
+    });
+}
+
 // Fungsi untuk scrolling bagian Testimonial
 function scrollTestimonialLeft() {
     const testimonial = document.getElementById('testimonial');
@@ -42,6 +61,16 @@ function autoScrollPrestasi() {
     }
 }
 
+// Fungsi infinite scroll untuk kejuaraan ekskul
+function autoScrollKejuaraan() {
+    const kejuaraan = document.getElementById('kejuaraanEkskul');
+    if (kejuaraan.scrollLeft + kejuaraan.clientWidth >= kejuaraan.scrollWidth) {
+        kejuaraan.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+        kejuaraan.scrollBy({ left: kejuaraan.clientWidth, behavior: 'smooth' });
+    }
+}
+
 // Fungsi infinite scroll untuk Testimonial
 function autoScrollTestimonial() {
     const testimonial = document.getElementById('testimonial');
@@ -54,4 +83,5 @@ function autoScrollTestimonial() {
 
 // Set interval auto-scroll
 setInterval(autoScrollPrestasi, 5000); // Auto scroll setiap 5 detik
+setInterval(autoScrollKejuaraan, 5000);
 setInterval(autoScrollTestimonial, 5000); // Auto scroll setiap 5 detik

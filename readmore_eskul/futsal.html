@@ -82,5 +82,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Base URL untuk gambar
+        const storageBaseURL = "http://127.0.0.1:8000/storage";
+
+        // Ambil data dari API
+        fetch("http://127.0.0.1:8000/api/eskul/15")
+            .then(response => response.json())
+            .then(data => {
+                if(data.status) {
+                    // Ubah tag <h1> menjadi "nama" dari API
+                    document.querySelector(".title h1").textContent = data.data.nama;
+
+                    // Ubah img src pada div class image-section menjadi "gambar" dari API
+                    document.querySelector(".image-section img").src = `${storageBaseURL}/${data.data.gambar}`;
+                }
+            })
+            .catch(error => {
+                console.error("Kesalahan saat mengambil data eskul:", error);
+            });
+    </script>
 </body>
 </html>

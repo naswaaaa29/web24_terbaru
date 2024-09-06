@@ -1,17 +1,22 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-* {
-    font-family: 'Poppins', sans-serif;
-}
-
+/* Root CSS variables */
 :root {
-    --primary-color: #11386e;
-    --secondary-color: #57c4e4;
-    --accent-color: #00bfa5;
-    --background-color: #f9f9f9;
-    --text-color: #444;
-    --white-color: #ffffff;
-    --font-family: 'Roboto', sans-serif;
+    --PrimaryColor: hsl(26, 93%, 50%);
+    --HoverColor: hsl(26, 90%, 42%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hsl(330, 12%, 97%);
+    --birdong: #0b4970;
+    --orenterang: #F45905;
+    --orenpastel: #FB9224;
+    --kuning: #FBE555;
+    --font-family: 'Poppins', sans-serif;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --border-radius: 12px;
     --transition: all 0.3s ease;
@@ -19,21 +24,22 @@
 
 body {
     font-family: var(--font-family);
-    background-color: var(--background-color);
+    background-color: var(--greyBg);
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    background: linear-gradient(135deg, var(--greyBg), var(--whiteColorDeam));
 }
 
 section.courses {
     padding: 4rem 1rem;
-    text-align: center;
 }
 
 .courses .heading {
     font-size: 3rem;
-    color: var(--primary-color);
+    margin-top: 50px;
+    color: var(--PrimaryColor);
     margin-bottom: 2rem;
+    text-align: center;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -44,7 +50,7 @@ section.courses {
     content: '';
     width: 80px;
     height: 4px;
-    background: var(--accent-color);
+    background: var(--orenpastel);
     display: block;
     margin: 0.5rem auto;
     border-radius: var(--border-radius);
@@ -58,26 +64,15 @@ section.courses {
 }
 
 .courses .col-5 {
-    background: var(--white-color);
+    background: var(--whiteColor);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     overflow: hidden;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px; /* Lebar tabel diperlebar */
     margin: 0 auto;
     animation: fadeIn 1s ease-in-out;
     transition: var(--transition);
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .courses .col-5:hover {
@@ -85,36 +80,86 @@ section.courses {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.courses .col-5 table {
-    width: 100%;
-    border-collapse: collapse;
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    padding-bottom: 1rem;
 }
 
-.courses .col-5 th, .courses .col-5 td {
-    padding: 20px;
-    border: 1px solid var(--secondary-color);
+.custom-btn {
+    background-color: var(--PrimaryColor);
+    color: var(--whiteColor);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.custom-btn:hover {
+    background-color: var(--birdong);
+    box-shadow: var(--box-shadow);
+}
+
+.custom-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    box-shadow: var(--box-shadow);
+}
+
+.custom-table th,
+.custom-table td {
+    /* padding: 12px;
+    border: 1px solid var(--greyText);
+    text-align: center; */
+    padding: 12px;
+    border: 1px solid var(--birdong);
     text-align: left;
     transition: var(--transition);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-.courses .col-5 th {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
+.custom-table tr:nth-child(even) {
+    background-color: var(--whiteColorDeam);
+}
+
+.custom-table tbody :hover {
+    background-color: var(--orenpastel);
+    color: var(--whiteColor);
+}
+
+.custom-table tbody tr:hover td {
+    color: var(--whiteColor);
+}
+
+.custom-table th {
+    /* background-color: var(--orenpastel);
+    color: var(--whiteColor); */
+    background-color: var(--birdong);
+    color: var(--whiteColor);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.courses .col-5 td {
-    color: var(--text-color);
+.custom-table td {
+    color: var(--textColor);
     font-weight: 500;
 }
 
-.courses .col-5 tr:nth-child(even) {
-    background-color: #f2f2f2;
+.custom-btn.active,
+.custom-btn:focus {
+    background-color: var(--birdong);
+    color: var(--whiteColor);
+    box-shadow: var(--box-shadow);
+    outline: none; /* Remove the default focus outline */
 }
 
-.courses .col-5 tr:hover {
-    background-color: var(--accent-color);
-    color: var(--white-color);
-}
+
+/* .custom-table tbody tr:hover {
+    background-color: var(--whiteColorDeam);
+    cursor: pointer;
+} */

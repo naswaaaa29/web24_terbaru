@@ -65,7 +65,7 @@
         <div class="container">
             <div class="content-section">
                 <div class="title">
-                    <h1>Ekstrakurikuler Saman</h1>
+                    <h1></h1>
                 </div>
                 <div class="content">
                     <!-- <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3> -->
@@ -78,9 +78,31 @@
                 </div>
             </div>
             <div class="image-section">
-                <img src="../img/1.jpg">
+                <img src="">
             </div>
         </div>
     </div>
+
+    <script>
+        // Base URL untuk gambar
+        const storageBaseURL = "http://127.0.0.1:8000/storage";
+
+        // Ambil data dari API
+        fetch("http://127.0.0.1:8000/api/eskul/3")
+            .then(response => response.json())
+            .then(data => {
+                if(data.status) {
+                    // Ubah tag <h1> menjadi "nama" dari API
+                    document.querySelector(".title h1").textContent = data.data.nama;
+
+                    // Ubah img src pada div class image-section menjadi "gambar" dari API
+                    document.querySelector(".image-section img").src = `${storageBaseURL}/${data.data.gambar}`;
+                }
+            })
+            .catch(error => {
+                console.error("Kesalahan saat mengambil data eskul:", error);
+            });
+    </script>
+
 </body>
 </html>

@@ -412,6 +412,7 @@ section {
 .carousel.showDetail .list .item:nth-child(2) .detail  .des,
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications,
 .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+    color: #2A1A5E;
     opacity: 0;
     animation: showContent 0.5s 1s ease-in-out 1 forwards;
 }

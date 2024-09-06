@@ -98,131 +98,67 @@
             <div class="card1">
                 <div class="prestasi-card">
                     <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
+                        <img id="gambar1" src="#" alt="Prestasi">
                     </div>
                     <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p></p>
                     </div>
                     <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
                 </div>
 
                 <div class="prestasi-card">
                     <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
+                        <img id="gambar2" src="#" alt="Prestasi">
                     </div>
                     <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p></p>
                     </div>
                     <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
                 </div>
 
                 <div class="prestasi-card">
                     <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
+                        <img id="gambar3" src="#" alt="Prestasi">
                     </div>
                     <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p></p>
                     </div>
                     <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
                 </div>
 
                 <div class="prestasi-card">
                     <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
+                        <img id="gambar4" src="#" alt="Prestasi">
                     </div>
                     <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
-                </div>
-            </div>
-            
-            <div class="card3">
-                <div class="prestasi-card">
-                    <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
-                    </div>
-                    <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
-                    </div>
-                    <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
-                    </div>
-                    <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
-                    </div>
-                    <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p></p>
                     </div>
                     <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
                 </div>
             </div>
 
             <div class="card2">
+
                 <div class="prestasi-card">
                     <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
+                        <img id="gambar5" src="#" alt="Prestasi">
                     </div>
                     <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p></p>
                     </div>
                     <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
                 </div>
 
                 <div class="prestasi-card">
                     <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
+                        <img id="gambar6" src="#" alt="Prestasi">
                     </div>
                     <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
-                    </div>
-                    <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="prestasi-image">
-                        <img src="../img/prestasi1.jpg" alt="Prestasi">
-                    </div>
-                    <div class="prestasi-description">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p></p>
                     </div>
                     <button class="button-prestasi"><a href="../readmore_prestasi/prestasi1.html">Read More</a></button>
                 </div>
             </div>
-
-            <!-- More prestasi cards here -->
-
         </div>
     </div>
 </div>
@@ -262,7 +198,7 @@
     </div>
  <!-- selesai footer -->
 
-    <script>
+ <script>
         function showSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.add('active');
@@ -277,6 +213,32 @@
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.remove('active');
         }
+
+        // Base URL untuk gambar
+        const storageBaseURL = "http://127.0.0.1:8000/storage";
+
+        // Fetch data dari API
+        fetch("http://127.0.0.1:8000/api/artikel/kategori/prestasi-siswa")
+        .then(response => response.json())
+        .then(data => {
+            if(data.status && data.data.length > 0) {
+                // Looping untuk mengisi cardnya
+                data.data.forEach((prestasi, index) => {
+                    // ngambil elemen gambar dan deskripsi
+                    const imgElement = document.getElementById(`gambar${index + 1}`);
+                    const descriptionElement = imgElement.parentElement.nextElementSibling.querySelector('p');
+
+                    // image source
+                    imgElement.src = `${storageBaseURL}/${prestasi.gambar}`;
+
+                    // update prestasi-description dengan judul
+                    descriptionElement.textContent = prestasi.judul;
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching prestasi data:", error);
+        });
     </script>
 
 </body>

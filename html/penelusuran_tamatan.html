@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penelusuran Tamatan</title>
-    <link rel="stylesheet" href="../css/penelusuran_tamatan.css">
+    <link rel="stylesheet" href="../css/kemitraan.css">
     <link rel="stylesheet" href="../css/visimisi.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../footer/footer/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
 </head>
 <body>
     <header>
@@ -65,69 +65,26 @@
         </div>
     </header>
     <section class="courses" id="courses">
-        <h1 class="heading">ROOM LIST</h1>
+        <h1 class="heading">PENELUSURAN TAMATAN</h1>
         <div class="box-container">
             <div class="col-5">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>NIS</th>
-                            <th>NISN</th>
-                            <th>Nama Peserta Didik</th>
-                            <th>L/P</th>
-                            <th>TTL</th>
-                            <th>Agama</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>1111</td>
-                            <td>Melati Room</td>
-                            <td>Rp 1.000.000</td>
-                            <td>1111</td>
-                            <td>Melati Room</td>
-                            <td>Rp 1.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>2222</td>
-                            <td>Mawar Room</td>
-                            <td>Rp 2.000.000</td>
-                            <td>1111</td>
-                            <td>Melati Room</td>
-                            <td>Rp 1.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>333</td>
-                            <td>Dahlia Room</td>
-                            <td>Rp 3.000.000</td>
-                            <td>1111</td>
-                            <td>Melati Room</td>
-                            <td>Rp 1.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>4444</td>
-                            <td>Anggrek Room</td>
-                            <td>Rp 4.000.000</td>
-                            <td>1111</td>
-                            <td>Melati Room</td>
-                            <td>Rp 1.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>5555</td>
-                            <td>Tulip Room</td>
-                            <td>Rp 5.000.000</td>
-                            <td>1111</td>
-                            <td>Melati Room</td>
-                            <td>Rp 1.000.000</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table id="kemitraanTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <!-- <th>ID Jurusan</th> -->
+                                <th>Nama</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Sasaran</th>
+                                <th>Tempat Sasaran</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Data dari API akan dimasukkan di sini -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
@@ -165,5 +122,45 @@
     </div>
  <!-- selesai footer -->
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://127.0.0.1:8000/api/pentam')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#table-body');
+                    data.data.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        const idCell = document.createElement('td');
+                        idCell.textContent = item.id;
+                        row.appendChild(idCell);
+
+                        // const jurusanCell = document.createElement('td');
+                        // jurusanCell.textContent = item.id_jurusan;
+                        // row.appendChild(jurusanCell);
+
+                        const namaCell = document.createElement('td');
+                        namaCell.textContent = item.nama;
+                        row.appendChild(namaCell);
+
+                        const jenkelCell = document.createElement('td');
+                        jenkelCell.textContent = item.jenis_kelamin;
+                        row.appendChild(jenkelCell);
+
+                        const sasaranCell = document.createElement('td');
+                        sasaranCell.textContent = item.sasaran;
+                        row.appendChild(sasaranCell);
+
+                        const tempsarCell = document.createElement('td');
+                        tempsarCell.textContent = item.tempat_sasaran;
+                        row.appendChild(tempsarCell);
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
 </body>
 </html>

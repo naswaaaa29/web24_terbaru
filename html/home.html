@@ -97,20 +97,20 @@
         <video class="video-slide" src="../img/video3.mp4" autoplay muted loop></video>
         <div class="content active">
             <h1>Selamat<br><span>Datang</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="#">Read More</a>
+            <p>Selamat Datang di SMKN 24 Jakarta!</p>
+            <a href="visimisi.html">Read More</a>
         </div>
         <div class="content">
             <h1>Selamat<br><span>Datang</span></h1>
-            <p>Where Care Meets Compassion.</p>
-            <a href="#">Read More</a>
+            <p>SMKN 24 Jakarta hadir untuk minat dan bakat anda.</p>
+            <a href="jurusan.html">Read More</a>
         </div>
         <div class="content">
             <h1>Selamat<br><span>Datang</span></h1>
             <p>Empowering Lives through Healthcare Excellence.</p>
-            <a href="#">Read More</a>
+            <a href="eskul.html">Read More</a>
         </div>
-        <div class="content">
+        <!-- <div class="content">
             <h1>Selamat<br><span>Datang</span></h1>
             <p>Bridging Hope and Health Together.</p>
             <a href="#">Read More</a>
@@ -118,7 +118,7 @@
         <div class="content">
             <h1>Selamat<br><span>Datang</span></h1>
             <p>Nurturing Health at Every Step.</p>
-            <a href="#">Read More</a>
+            <a href="#">Read More</a> -->
         </div>
         <div class="media-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -141,79 +141,47 @@
     <div class="prestasi-wrapper">
         <button class="arrow-button arrow-left" onclick="scrollPrestasiLeft()">&lt;</button>
         <div class="prestasi" id="prestasi">
+            <!-- Prestasi cards akan diisi dengan data dari API -->
+            <!-- Contoh card -->
+            <!--
             <div class="prestasi-card">
                 <div class="prestasi-image">
-                    <img src="../img/prestasi1.jpg" alt="Prestasi">
+                    <img id="gambar1" src="" alt="Gambar Prestasi">
                 </div>
                 <div class="prestasi-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p></p>
                 </div>
-                <button class="button-prestasi"><a href="#">Read More</a></button>
             </div>
-
-            <div class="prestasi-card">
-                <div class="prestasi-image">
-                    <img src="../img/prestasi1.jpg" alt="Prestasi">
-                </div>
-                <div class="prestasi-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <button class="button-prestasi"><a href="#">Read More</a></button>
-            </div>
-
-            <div class="prestasi-card">
-                <div class="prestasi-image">
-                    <img src="../img/prestasi1.jpg" alt="Prestasi">
-                </div>
-                <div class="prestasi-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <button class="button-prestasi"><a href="#">Read More</a></button>
-            </div>
+            -->
             
-            <div class="prestasi-card">
-                <div class="prestasi-image">
-                    <img src="../img/prestasi1.jpg" alt="Prestasi">
-                </div>
-                <div class="prestasi-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <button class="button-prestasi"><a href="#">Read More</a></button>
-            </div>
-
-            <div class="prestasi-card">
-                <div class="prestasi-image">
-                    <img src="../img/prestasi1.jpg" alt="Prestasi">
-                </div>
-                <div class="prestasi-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <button class="button-prestasi"><a href="#">Read More</a></button>
-            </div>
-
-            <div class="prestasi-card">
-                <div class="prestasi-image">
-                    <img src="../img/prestasi1.jpg" alt="Prestasi">
-                </div>
-                <div class="prestasi-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <button class="button-prestasi"><a href="#">Read More</a></button>
-            </div>
-
-            <!-- More prestasi cards here -->
-
         </div>
         <button class="arrow-button arrow-right" onclick="scrollPrestasiRight()">&gt;</button>
     </div>
 </div>
 <!-- selesai page prestasi -->
 
+<!-- mulai page kejuaraan ekskul -->
+<div class="kejuaraan-ekskul-container">
+    <div class="kejuaraan-ekskul-secHeader">
+        <h2 class="kejuaraan-ekskul-secTitle">Kejuaraan Ekskul</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam</p>
+    </div>
+    <div class="kejuaraan-ekskul-wrapper">
+        <button class="arrow-button arrow-left" onclick="scrollKejuaraanLeft()">&lt;</button>
+        <div class="kejuaraan-ekskul" id="kejuaraanEkskul">
+            <!-- Kejuaraan Ekskul cards akan diisi dengan data dari API -->
+        </div>
+        <button class="arrow-button arrow-right" onclick="scrollKejuaraanRight()">&gt;</button>
+    </div>
+</div>
+<!-- selesai page kejuaraan ekskul -->
+
 <!-- mulai page testimonial -->
 <div class="body-testimonial">
     <div class="container">
         <div class="content">
             <h2 class="title">Testimonial</h2>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam</p> -->
             <!-- Card -->
             <div class="testimonial-wrapper">
                 <button class="arrow-button testimonial-arrow-left" onclick="scrollTestimonialLeft()">&lt;</button>
@@ -424,6 +392,111 @@
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.remove('active');
         }
+
+       // Base URL untuk gambar
+        const storageBaseURL = "http://127.0.0.1:8000/storage";
+
+        // Fetch data dari API
+        fetch("http://127.0.0.1:8000/api/artikel/kategori/prestasi-siswa")
+            .then(response => response.json())
+            .then(data => {
+                if (data.status && data.data.length > 0) {
+                    // Ambil elemen container untuk prestasi
+                    const prestasiContainer = document.getElementById('prestasi');
+                    
+                    // Looping untuk mengisi cardnya
+                    data.data.forEach((prestasi, index) => {
+                        // Buat elemen card baru
+                        const card = document.createElement('div');
+                        card.classList.add('prestasi-card');
+                        
+                        // Buat elemen gambar dan deskripsi
+                        const imageDiv = document.createElement('div');
+                        imageDiv.classList.add('prestasi-image');
+                        const imgElement = document.createElement('img');
+                        imgElement.src = `${storageBaseURL}/${prestasi.gambar}`;
+                        imgElement.alt = prestasi.judul;
+                        imageDiv.appendChild(imgElement);
+                        
+                        const descriptionDiv = document.createElement('div');
+                        descriptionDiv.classList.add('prestasi-description');
+                        const pElement = document.createElement('p');
+                        pElement.textContent = prestasi.judul;
+                        descriptionDiv.appendChild(pElement);
+
+                        // Buat elemen button "Read More"
+                        const buttonElement = document.createElement('button');
+                        buttonElement.classList.add('button-prestasi');
+                        const linkElement = document.createElement('a');
+                        linkElement.href = "#";  // Ini bisa diubah dengan URL sebenarnya jika ada
+                        linkElement.textContent = "Read More";
+                        buttonElement.appendChild(linkElement);
+
+                        // Tambahkan elemen gambar, deskripsi, dan tombol ke dalam card
+                        card.appendChild(imageDiv);
+                        card.appendChild(descriptionDiv);
+                        card.appendChild(buttonElement);
+                        
+                        // Tambahkan card ke dalam container
+                        prestasiContainer.appendChild(card);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching prestasi data:", error);
+            });
+
+            // Fetch data dari API kejuaraan ekskul
+fetch("http://127.0.0.1:8000/api/keskul")
+    .then(response => response.json())
+    .then(data => {
+        if (data.status && data.data.length > 0) {
+            // Ambil elemen container untuk kejuaraan ekskul
+            const kejuaraanEkskulContainer = document.getElementById('kejuaraanEkskul');
+            
+            // Looping untuk mengisi cardnya
+            data.data.forEach((keskul, index) => {
+                // Buat elemen card baru
+                const card = document.createElement('div');
+                card.classList.add('kejuaraan-ekskul-card');
+                
+                // Buat elemen gambar dan deskripsi
+                const imageDiv = document.createElement('div');
+                imageDiv.classList.add('kejuaraan-ekskul-image');
+                const imgElement = document.createElement('img');
+                imgElement.src = `${storageBaseURL}/${keskul.gambar}`;
+                imgElement.alt = keskul.nama;
+                imageDiv.appendChild(imgElement);
+                
+                const descriptionDiv = document.createElement('div');
+                descriptionDiv.classList.add('kejuaraan-ekskul-description');
+                const pElement = document.createElement('p');
+                pElement.textContent = keskul.nama;
+                descriptionDiv.appendChild(pElement);
+
+                // Buat elemen button "Read More"
+                const buttonElement = document.createElement('button');
+                buttonElement.classList.add('button-kejuaraan');
+                const linkElement = document.createElement('a');
+                linkElement.href = "#";  // Ini bisa diubah dengan URL sebenarnya jika ada
+                linkElement.textContent = "Read More";
+                buttonElement.appendChild(linkElement);
+
+                // Tambahkan elemen gambar, deskripsi, dan tombol ke dalam card
+                card.appendChild(imageDiv);
+                card.appendChild(descriptionDiv);
+                card.appendChild(buttonElement);
+                
+                // Tambahkan card ke dalam container
+                kejuaraanEkskulContainer.appendChild(card);
+            });
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching kejuaraan ekskul data:", error);
+    });
+
+
     </script>
 </body>
 </html>
